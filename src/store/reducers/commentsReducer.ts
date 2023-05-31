@@ -5,8 +5,6 @@ const initialState: CommentsState = {
     comments: [],
     loading: false,
     error: null,
-    page: 1,
-    limit: 10
 }
 
 
@@ -18,8 +16,6 @@ export const commentsReducer = (state = initialState, action: CommentsAction):Co
             return {...state, loading: false, comments: action.payload};
         case CommentsActionTypes.FETCH_COMMENTS_ERROR:
             return {...state, loading: false, error: action.payload};
-        case CommentsActionTypes.SET_COMMENTS_PAGE:
-            return {...state, page: action.payload};
         default:
             return state;
     }

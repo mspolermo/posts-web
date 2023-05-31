@@ -1,15 +1,19 @@
 import React from 'react';
 import UserList from './components/UserList';
-import CommentsList from './components/CommentsList';
-
+import PostsList from './components/PostsList';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Header from './components/Header/Header';
+import './styles/App.scss'
+import Menu from './components/Menu/Menu';
 
 function App() {
   return (
     <div>
-      <p>PROJECT STARTED</p>
-      <UserList />
-      <hr/>
-      <CommentsList />
+      <Header />
+      <main className='container'>
+        <PostsList />
+        <Menu />  
+      </main>
     </div>
   );
 }

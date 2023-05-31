@@ -1,0 +1,65 @@
+$backgroundColor: #100e19;
+$backgroundElements: #1f1b2e;
+
+$headingColor: #fff;
+$textColor: #b0afb1;
+
+$defaultIconColor:#2b2640;
+$defaultIconColor-hover: #413960;
+
+$splitLineColor: rgba(255,255,255,.16);
+$activeColor: #fff;
+
+$redColor: #ea003d;
+$activeRedColor: #ff1a57;
+
+%standartText {
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 22px;
+    color: $textColor;
+};
+
+%modalWindowPreset {
+    position: absolute;
+    z-index: 4;
+    width: 100%;
+    min-height: 500%;
+
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    display: flex;
+    justify-content: center;
+
+    overflow: hidden;
+    background:rgba(0,0,0,.9);
+};
+
+@mixin hover-colorAnim ($hoverColor, $defaultColor){
+    transition-property: color;
+    &:hover {
+        cursor: pointer;
+        color: $hoverColor;
+        transition-duration: 0.4s;
+    }
+    &:not(:hover):not(:active) {
+        color: $defaultColor;
+        transition-duration: 0.4s;
+    }
+};
+
+@mixin hover-backgroundcolorAnim ($hoverColor, $defaultColor){
+    transition-property: background-color;
+    &:hover {
+        cursor: pointer;
+        background-color: $hoverColor;
+        transition-duration: 0.4s;
+    }
+    &:not(:hover):not(:active) {
+        background-color: $defaultColor;
+        transition-duration: 0.4s;
+    }
+};

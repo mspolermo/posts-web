@@ -1,7 +1,9 @@
 import * as UserActionsCreators from './user'
-import * as CommentsActionsCreators from './comments'
+import * as PostsActionsCreators from './posts'
+import * as CommentssActionsCreators from './comments'
 
 export default {
     ...UserActionsCreators,
-    ...CommentsActionsCreators
+    ...PostsActionsCreators,
+    ...CommentssActionsCreators
 }

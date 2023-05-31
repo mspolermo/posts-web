@@ -1,0 +1,42 @@
+@import '/src/styles/variables.scss';
+
+%brg-lines{
+    position: absolute;
+    width: 26px;
+    background-color: black;
+    height: 3px;
+}
+
+
+nav {
+    height: 50px;
+    width: 100%;
+    background-color: gray;
+    position: fixed;
+    z-index: 50;
+    display: flex !important;
+    align-items: center;
+}
+
+.burger-btn {
+    width: 30px;
+    height: 20px;
+    margin-left: 20px;
+    position: relative;
+    cursor: pointer;
+    &__line {
+        @extend %brg-lines;
+        top: 9px;
+    }
+    &::before{
+        content: '';
+        @extend %brg-lines;
+        top: 0;
+    }
+    &::after{
+        content: '';
+        @extend %brg-lines;
+        bottom: 0;
+    }
+}
+
