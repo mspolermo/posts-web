@@ -1,0 +1,13 @@
+@import '/src/styles/variables.scss';
+
+.post {
+    &__btn{
+        background-color: lightblue;
+    }
+    &__commentsBlock{
+        display: none;
+        &_active{
+            display: block;
+        }
+    }
+}

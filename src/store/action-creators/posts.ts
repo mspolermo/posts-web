@@ -20,7 +20,7 @@ export const fetchPosts = (page = 1, limit = 10) => {
 
             dispatch({
                 type: PostsActionTypes.FETCH_POSTS_ERROR, 
-                payload: 'Произошла ошибка при загрузке комментариев'
+                payload: 'Произошла ошибка при загрузке постов'
             });
 
         };

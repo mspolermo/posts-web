@@ -2,19 +2,17 @@ import React, { FC, useEffect, useState } from "react";
 import { useTypedSelector } from "../../hooks/useTypedSelector";
 import { useActions } from "../../hooks/useAction";
 import Spinner from 'react-bootstrap/Spinner';
-import { IComment } from "../../types/comments";
+import './PostsList.scss'
+import Post from "../Post/Post";
 
-const CommentsList:FC = () => {
+const PostsList:FC = () => {
     const {posts, error, limit, loading, page, counter} = useTypedSelector(state => state.posts);
-    const {comments} = useTypedSelector(state => state.comments);
     const {fetchPosts, setPostsPage} = useActions();
-    const {fetchComments} = useActions();
-
     const [pages, setPages] = useState([0])
 
     useEffect(() => {
         fetchPosts(page, limit);
-        fetchComments()
+        
     }, []);
 
     useEffect(() => {
@@ -39,19 +37,11 @@ const CommentsList:FC = () => {
     };
 
     return (
-        <div>
-            {posts.map((post) => 
-                <div key={post.id}>
-                    <p>{post.id} - {post.title}</p>
-                    <div>
-                        {comments.filter( comment => comment.postId == 1).map(
-                            (comment) => 
-                            <div key={comment.id}>{comment.body}</div>
-                        )}
-                    </div>
-                </div>
+        <div className="postsList">
+            {posts.map((post) => <Post key={post.id} post={post} /> 
             )}
             <div style={{display: 'flex'}}>
+                
                 {pages.map (p =>
                     <div
                         key={p}
@@ -64,4 +54,4 @@ const CommentsList:FC = () => {
     );
 };
 
-export default CommentsList;
+export default PostsList;
