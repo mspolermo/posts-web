@@ -1,5 +1,12 @@
+export interface IPost {
+    userId: number,
+    id: number,
+    title: string,
+    body: string
+}
+
 export interface PostsState {
-    posts: any[];
+    posts: IPost[];
     loading: boolean;
     error: null | string;
     page: number;
@@ -18,7 +25,7 @@ interface FetchPostsAction {
 }
 interface FetchPostsSuccessAction {
     type: PostsActionTypes.FETCH_POSTS_SUCCESS;
-    payload: any[];
+    payload: IPost[];
     counter: number;
 }
 interface FetchPostsErrorAction {

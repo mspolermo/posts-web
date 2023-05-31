@@ -1,7 +1,8 @@
 import React, { FC, useEffect, useState } from "react";
-import { useTypedSelector } from "../hooks/useTypedSelector";
-import { useActions } from "../hooks/useAction";
+import { useTypedSelector } from "../../hooks/useTypedSelector";
+import { useActions } from "../../hooks/useAction";
 import Spinner from 'react-bootstrap/Spinner';
+import { IComment } from "../../types/comments";
 
 const CommentsList:FC = () => {
     const {posts, error, limit, loading, page, counter} = useTypedSelector(state => state.posts);

@@ -1,5 +1,12 @@
+export interface IComment {
+    postId: number,
+    id: number,
+    name: string,
+    email: string,
+    body: string
+}
 export interface CommentsState {
-    comments: any[];
+    comments: IComment[];
     loading: boolean;
     error: null | string;
 }
@@ -14,7 +21,7 @@ interface FetchCommentsAction {
 }
 interface FetchCommentsSuccessAction {
     type: CommentsActionTypes.FETCH_COMMENTS_SUCCESS;
-    payload: any[];
+    payload: IComment[];
 }
 interface FetchCommentsErrorAction {
     type: CommentsActionTypes.FETCH_COMMENTS_ERROR;

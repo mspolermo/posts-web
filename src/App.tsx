@@ -1,21 +1,12 @@
 import React from 'react';
-import UserList from './components/UserList';
-import PostsList from './components/PostsList';
+import './styles/App.scss';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Header from './components/Header/Header';
-import './styles/App.scss'
-import Menu from './components/Menu/Menu';
+import Router from './components/Router/Router';
 
 function App() {
   return (
-    <div>
-      <Header />
-      <main className='container'>
-        <PostsList />
-        <Menu />  
-      </main>
-    </div>
+    <Router />
   );
-}
+};
 
 export default App;
