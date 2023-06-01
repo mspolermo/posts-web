@@ -11,35 +11,37 @@ import Pagination from 'react-bootstrap/Pagination';
 import { IPost } from "../../types/posts";
 
 interface PostsListProps {
-    typeOfSorting?: string
+    typeOfSorting?: string;
+    searchQuerry? : string;
 }
 
-const PostsList:FC<PostsListProps> = ({typeOfSorting}) => {
+const PostsList:FC<PostsListProps> = ({typeOfSorting, searchQuerry}) => {
     const {posts, error, limit, loading, page, counter} = useTypedSelector(state => state.posts);
     const {fetchPosts, setPostsPage} = useActions();
     const [pages, setPages] = useState(counter/ limit)
 
     const [currentPosts, setCurrentPosts] = useState(posts)
 
-
-
-
+    
     useEffect(() => {
         fetchPosts(page, limit);
         setCurrentPosts(posts)
     }, []);
 
-        useEffect(() => {
-        if (typeOfSorting == 'title') {
-            console.log('попал')
-            fetchPosts(1, 99999);
-        } else {
-            console.log('не попал')
-            fetchPosts(page, limit);
-            }
+    useEffect(() => {
+    if (typeOfSorting == 'title'){
+        fetchPosts(1, 99999);
+    } else {
+        fetchPosts(page, limit);
+    }
     },[typeOfSorting])
 
     useEffect(() => {
+        if (searchQuerry && searchQuerry.length > 0) {
+            console.log('попа')
+            setCurrentPosts( posts.filter( (post) => post.body.includes(searchQuerry!) )
+        )
+        }
         if (typeOfSorting == 'title') {
             setCurrentPosts(posts.sort((a, b) => a[typeOfSorting as keyof typeof a].toString().localeCompare(b[typeOfSorting as keyof typeof b].toString())));
         }else {
@@ -53,6 +55,19 @@ const PostsList:FC<PostsListProps> = ({typeOfSorting}) => {
         setCurrentPosts(posts)
     }, [page])
 
+   //Пагинация
+    let active = page;
+    let items = [];
+    for (let i=1; i <= pages; i++) {
+        items.push(
+            <Pagination.Item key={i} active={i === page} onClick={() => setPostsPage(i)}>
+            {i}
+            </Pagination.Item>,
+        );
+    } 
+
+
+
     if (loading) {
         return (
             <Spinner animation="border" role="status">
@@ -60,24 +75,11 @@ const PostsList:FC<PostsListProps> = ({typeOfSorting}) => {
             </Spinner>
         )
     };
-    
     if (error) {
         return (
             <Alert variant={'danger'}>{error}</Alert>
         )
     };
-
-    let active = page;
-    let items = [];
-    console.log(pages)
-    for (let i=1; i <= pages; i++) {
-        items.push(
-            <Pagination.Item key={i} active={i === page} onClick={() => setPostsPage(i)}>
-            {i}
-            </Pagination.Item>,
-        );
-    }
-
     return (
         <div className="postsList">
             {currentPosts.map((post) => <Post key={post.id} post={post} /> 
