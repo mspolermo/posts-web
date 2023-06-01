@@ -17,14 +17,14 @@ const CommentsList:FC<CommentsListProps> = ({postId}) => {
     }, [])
 
     return (
-        <div>
+        <div className="commentsList">
             {(error)
 
                 ?
                 <p>{error}</p>
 
                 :
-                <div>
+                <div className="commentsList__body">
                     {comments.filter(comment => comment.postId == postId).map(
                         (comment) => 
                             <Comment key={comment.id} comment={comment}/>

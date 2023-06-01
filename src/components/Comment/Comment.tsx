@@ -1,13 +1,24 @@
-import React, { FC } from "react";
+import React, { FC, useState } from "react";
 import './Comment.scss'
 import { IComment } from "../../types/comments";
+import Toast from 'react-bootstrap/Toast';
 
 interface CommentProps {
     comment: IComment
 }
 const Comment:FC<CommentProps> = ({comment}) => {
+    const [showA, setShowA] = useState(true);
+    const toggleShowA = () => setShowA(!showA);
     return(
-        <div>{comment.postId} - {comment.body}</div>
+        <div className="comment">
+            <Toast show={showA} onClose={toggleShowA} className="comment__body">
+                <Toast.Header>
+                    <strong className="me-auto">{comment.email}</strong>
+                    <small>{comment.postId} mins ago</small>
+                </Toast.Header>
+                <Toast.Body>{comment.body}</Toast.Body>
+            </Toast>
+        </div>
     )
 }
 

@@ -23,7 +23,7 @@ export interface IUser {
 }
 
 export interface UserState {
-    users: IUser[];
+    user: IUser;
     loading: boolean;
     error: null | string;
 }
@@ -37,7 +37,7 @@ export interface FecthUserAction {
 }
 export interface FecthUserSuccessAction {
     type: UserActionTypes.FETCH_USERS_SUCCESS;
-    payload: IUser[];
+    payload: IUser;
 }
 export interface FecthUserErrorAction {
     type: UserActionTypes.FETCH_USERS_ERROR;

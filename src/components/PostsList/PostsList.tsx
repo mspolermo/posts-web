@@ -1,9 +1,13 @@
 import React, { FC, useEffect, useState } from "react";
 import { useTypedSelector } from "../../hooks/useTypedSelector";
 import { useActions } from "../../hooks/useAction";
-import Spinner from 'react-bootstrap/Spinner';
+
 import './PostsList.scss'
 import Post from "../Post/Post";
+
+import Spinner from 'react-bootstrap/Spinner';
+import Alert from 'react-bootstrap/Alert';
+import Pagination from 'react-bootstrap/Pagination';
 
 const PostsList:FC = () => {
     const {posts, error, limit, loading, page, counter} = useTypedSelector(state => state.posts);
@@ -33,14 +37,27 @@ const PostsList:FC = () => {
     };
     
     if (error) {
-        return <h1>{error}</h1>
+        return (
+            <Alert variant={'danger'}>{error}</Alert>
+        )
     };
+
+    let active = page;
+    let items = [];
+    for (let number = 1; number <= 5; number++) {
+        items.push(
+            <Pagination.Item key={number} active={number === active} onClick={() => setPostsPage(number)}>
+            {number}
+            </Pagination.Item>,
+        );
+    }
 
     return (
         <div className="postsList">
             {posts.map((post) => <Post key={post.id} post={post} /> 
             )}
-            <div style={{display: 'flex'}}>
+            <Pagination>{items}</Pagination>
+            {/* <div style={{display: 'flex'}}>
                 
                 {pages.map (p =>
                     <div
@@ -49,7 +66,7 @@ const PostsList:FC = () => {
                         style={{border: p === page ? '2px solid green' : '1px solid gray'}}
                     >{p}</div>
                 )}
-            </div>
+            </div> */}
         </div>
     );
 };
