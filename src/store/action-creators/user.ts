@@ -13,7 +13,7 @@ export const fetchUsers = (id:string) => {
             );
             setTimeout(() => {
                 dispatch({type: UserActionTypes.FETCH_USERS_SUCCESS, payload: response.data[0]})    
-            }, 2500);
+            }, 500);
             
         } catch(e) {
 

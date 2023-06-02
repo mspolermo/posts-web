@@ -1,5 +1,6 @@
 import React, { FC } from "react";
-import './Header.scss'
+import './Header.scss';
+
 import { useTypedSelector } from "../../hooks/useTypedSelector";
 import { useDispatch } from "react-redux";
 import { menuFalse, menuTrue } from "../../store/reducers/menuReducer";
@@ -17,14 +18,15 @@ const Header:FC = () => {
                 dispatch(menuFalse())
                 break;
         }
-    }
+    };
+
     return (
         <nav>
             <div className="burger-btn" onClick={menuToogle}>
                 <span className="burger-btn__line"/>
             </div>
       </nav>
-    )
-}
+    );
+};
 
 export default Header;

@@ -1,5 +1,12 @@
 @import '/src/styles/variables.scss';
 
 .postsList{
-
+    display: flex;
+    flex-direction: column;
+    &__loading {
+        margin: 0 auto;
+    }
+    &__pagination{
+        margin: 60px auto 0;
+    }
 }

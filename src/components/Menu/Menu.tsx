@@ -1,5 +1,6 @@
 import React, { FC } from "react";
-import './Menu.scss'
+import './Menu.scss';
+
 import { useTypedSelector } from "../../hooks/useTypedSelector";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
@@ -13,7 +14,7 @@ const Menu:FC = () => {
     function goToPage(link:string) {
         navigate(link);
         dispatch(menuFalse())
-    }
+    };
 
     return(
         <div className={menuStatus ?"menu menu__active" : "menu"}>
@@ -36,7 +37,7 @@ const Menu:FC = () => {
                 </ul>
             </div>
         </div>
-    )
-}
+    );
+};
 
 export default Menu

@@ -1,12 +1,11 @@
-import React, { FC, useEffect, useState } from "react";
-import './CommentsList.scss'
+import React, { FC, useEffect } from "react";
+import Alert from 'react-bootstrap/Alert';
+import './CommentsList.scss';
+import { CommentsListProps } from "../../types/componentsTypes";
+
 import Comment from "../Comment/Comment";
 import { useActions } from "../../hooks/useAction";
 import { useTypedSelector } from "../../hooks/useTypedSelector";
-
-interface CommentsListProps {
-    postId: number
-}
 
 const CommentsList:FC<CommentsListProps> = ({postId}) => {
     const {fetchComments} = useActions();
@@ -21,7 +20,7 @@ const CommentsList:FC<CommentsListProps> = ({postId}) => {
             {(error)
 
                 ?
-                <p>{error}</p>
+                <Alert variant={'danger'}>{error}</Alert>
 
                 :
                 <div className="commentsList__body">

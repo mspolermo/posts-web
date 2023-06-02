@@ -14,7 +14,7 @@ export const fetchPosts = (page = 1, limit = 10) => {
             });
             setTimeout(() => {
                 dispatch({type: PostsActionTypes.FETCH_POSTS_SUCCESS, payload: response.data, counter:count.data.length}); 
-            }, 500);
+            }, 1500);
             
         } catch(e) {
 

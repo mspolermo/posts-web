@@ -1,0 +1,23 @@
+@import '/src/styles/variables.scss';
+
+.userInfo {
+    display: flex;
+    flex-direction: column;
+    &__card {
+        &_left {
+            max-width: 18rem;
+            margin-right: 20px;
+        }
+        &_right {
+            min-width: 80%
+        }
+    }
+    &__top{
+        width: 100%;
+        display: flex;
+    }
+    &__btn {
+        margin: 20px 0;
+        align-self: flex-end;
+    }
+}

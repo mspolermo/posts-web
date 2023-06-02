@@ -6,5 +6,15 @@
     justify-content: center;
 }
 .userPage{
-    padding-top: 100px;
+    padding: 100px 0;
+    &__postListBlock{
+        display: none;
+        &_active {
+            display: block;
+        }
+    }
+    &__heading {
+        margin-bottom: 40px;
+        text-align: center;
+    }
 }
