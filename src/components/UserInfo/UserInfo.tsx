@@ -10,10 +10,12 @@ import Alert from 'react-bootstrap/Alert';
 import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
 import Button from 'react-bootstrap/Button';
+import { useNavigate } from "react-router-dom";
 
 const UserInfo:FC<UserInfoProps> = ({userId, hiddenBlock}) => {
     const {user, loading, error} = useTypedSelector( state => state.user);
     const {fetchUsers} = useActions();
+    const navigate = useNavigate();
     const imgLink = 'https://www.freeiconspng.com/uploads/person-outline-icon-png-person-outline-icon-png-person-17.png'
 
     useEffect( () => {
@@ -43,6 +45,7 @@ const UserInfo:FC<UserInfoProps> = ({userId, hiddenBlock}) => {
     };
     return (
         <div className="userInfo">
+            <Button className="userInfo__btn" onClick={() => navigate('/posts-web/')}>Назад</Button>
             <div className="userInfo__top">
                 <Card className="userInfo__card userInfo__card_left">
                     <Card.Img src={imgLink} />
@@ -58,19 +61,20 @@ const UserInfo:FC<UserInfoProps> = ({userId, hiddenBlock}) => {
                 <Card className="userInfo__card userInfo__card_right">
                     <Card.Header>Информация о пользователе</Card.Header>
                         <ListGroup className="list-group-flush">
+                            <ListGroup.Item>Phone number: {user.phone}</ListGroup.Item>
+                            <ListGroup.Item>Web-site: {user.website}</ListGroup.Item>
+                            <ListGroup.Item>
+                                Address: {user.address.city}, {user.address.street}, {user.address.suite}
+                            </ListGroup.Item>
                             <ListGroup.Item>
                                 Company: "{user.company.name}" 
                                 <br/>
                                 {user.company.catchPhrase} : {user.company.bs}
                             </ListGroup.Item>
-                            <ListGroup.Item>
-                                Address: {user.address.city}, {user.address.street}, {user.address.suite}
-                            </ListGroup.Item>
-                            <ListGroup.Item>Phone number: {user.phone}</ListGroup.Item>
-                            <ListGroup.Item>Web-site: {user.website}</ListGroup.Item>
                         </ListGroup>
                 </Card>
             </div>
+            
             <Button className="userInfo__btn" onClick={postBlockToogle}>Посты пользователя</Button>
                 
         </div>

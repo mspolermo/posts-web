@@ -40,3 +40,22 @@ nav {
     }
 }
 
+.header {
+    &__point{
+        font-size: 14px;
+        margin-top: 20px;
+        cursor: pointer;
+        &:hover{
+
+                    color: black;
+                    font-size: 15px;
+                    transition: 0.5s font-size, color;
+        }
+        &:not(hover){
+                    color: rgba(33, 37, 41, 0.75);
+                    font-size: 14px;
+                    transition: 0.3s font-size, color;
+        }
+    }
+}
+

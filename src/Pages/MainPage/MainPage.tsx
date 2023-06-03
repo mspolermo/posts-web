@@ -1,7 +1,6 @@
 import React, { FC, useState } from "react";
 import './MainPage.scss'
 import PostsList from '../../components/PostsList/PostsList';
-import Menu from '../../components/Menu/Menu';
 import Form from 'react-bootstrap/Form';
 
 
@@ -16,7 +15,6 @@ const MainPage:FC = () => {
 
     return (
         <div className="mainPage">
-
             <div className="container mainPage__container">
 
                 <h2 className="mainPage__heading">Поиск</h2>
@@ -47,9 +45,6 @@ const MainPage:FC = () => {
                 <PostsList typeOfSorting={sortVariant} searchQuerry={searchQuerry} setTypeOfSorting={variantUpdate}/>
             
             </div>
-
-            <Menu /> 
-
         </div>
     );
 };

@@ -3,7 +3,6 @@ import { useParams } from "react-router-dom";
 import './UserPage.scss'
 import { UserPageParams } from "../../types/componentsTypes";
 
-import Menu from '../../components/Menu/Menu';
 import PostsList from "../../components/PostsList/PostsList";
 import UserInfo from "../../components/UserInfo/UserInfo";
 
@@ -14,7 +13,6 @@ const UserPage:FC = () => {
     
     return (
         <div className="userPage">
-
             <div className="container userPage__container">
 
                 <UserInfo userId={params.id!} hiddenBlock={postListBlock}/>
@@ -25,9 +23,6 @@ const UserPage:FC = () => {
                 </div>
                 
             </div>
-
-            <Menu /> 
-            
         </div>
     )
 }
