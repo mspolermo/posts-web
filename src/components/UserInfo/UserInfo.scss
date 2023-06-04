@@ -21,3 +21,39 @@
         align-self: flex-end;
     }
 }
+
+@media screen and (max-width: 990px) {
+    .userInfo {
+        &__card {
+            &_left {
+                max-width: 42%;
+            }
+            &_right {
+                min-width: 68%
+            }
+            }
+    }
+}
+@media screen and (max-width: 570px) {
+    .userInfo {
+        flex-direction: column;
+        
+        &__top{
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+        }
+        &__card {
+            
+            &_left {
+                min-width: 100%;
+            }
+            &_right {
+                min-width: 100%
+            }
+        }
+        &__btn {
+            align-self: auto;
+        }
+    }
+}

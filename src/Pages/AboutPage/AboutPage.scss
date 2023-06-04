@@ -1,5 +1,17 @@
 @import '/src/styles/variables.scss';
 
 .aboutPage{
-    padding-top: 100px;
+    &__heading {
+        padding: 20px 0;
+        text-align: center;
+    }
+    &__img {
+        margin-top: 10px;
+        margin-left: 10px;
+        height: 180px;
+        width: 180px;
+        background: url('../../static/Photo\ Medvedev\ Alexander.jpg') no-repeat center center;
+        background-size: cover;
+        border-radius: 50%;
+    }
 }

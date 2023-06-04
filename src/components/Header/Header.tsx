@@ -13,7 +13,7 @@ const Header:FC = () => {
     const {menuStatus} = useTypedSelector(state => state.menu);
     const dispatch = useDispatch();
     const navigate = useNavigate();
-
+    const imgLink = 'https://www.freeiconspng.com/uploads/person-outline-icon-png-person-outline-icon-png-person-17.png';
 	function closing() {
         dispatch(menuFalse())
     };
@@ -47,7 +47,7 @@ const Header:FC = () => {
                     <Offcanvas.Header closeButton>
                     <Offcanvas.Title>Menu</Offcanvas.Title>
                     </Offcanvas.Header>
-                    <Offcanvas.Body>
+                    <Offcanvas.Body className="header__menu">
                         <ul>
                             <li>
                                 <p className="header__point"
@@ -64,6 +64,13 @@ const Header:FC = () => {
                                 </p> 
                             </li>    
                         </ul>
+                        <div className="header__about">
+                            <img src={imgLink} alt="ava" className="header__ava"/>
+                            <div className="header__block">
+                                <h4 className="header__heading header__heading_small">Алксандр Медведев</h4>
+                                <p className="header__text">E-mail: mspolermo@gmail.com</p>
+                            </div>
+                        </div>
                     </Offcanvas.Body>
                 </Offcanvas>
             </div>
