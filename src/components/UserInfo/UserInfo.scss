@@ -1,5 +1,3 @@
-@import '/src/styles/variables.scss';
-
 .userInfo {
     display: flex;
     flex-direction: column;
@@ -31,13 +29,11 @@
             &_right {
                 min-width: 68%
             }
-            }
+        }
     }
 }
 @media screen and (max-width: 570px) {
     .userInfo {
-        flex-direction: column;
-        
         &__top{
             display: flex;
             flex-direction: column;

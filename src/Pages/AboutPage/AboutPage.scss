@@ -1,17 +1,66 @@
-@import '/src/styles/variables.scss';
-
 .aboutPage{
+    &__container {
+        display: flex;
+        flex-direction: column;    
+    }
+    &__card {
+        &_left {
+            max-width: 25%;
+            margin-right: 20px;
+        }
+        &_right {
+            min-width: 75%
+        }
+    }
+    &__top{
+        width: 100%;
+        display: flex;
+    }
+    &__btn {
+        margin: 20px 0;
+        align-self: flex-end;
+    }
+    &__link {
+        color: white;
+        text-decoration: none;
+    }
     &__heading {
         padding: 20px 0;
         text-align: center;
     }
     &__img {
-        margin-top: 10px;
-        margin-left: 10px;
-        height: 180px;
-        width: 180px;
-        background: url('../../static/Photo\ Medvedev\ Alexander.jpg') no-repeat center center;
-        background-size: cover;
-        border-radius: 50%;
+        padding: 20px;
+    }
+}
+@media screen and (max-width: 990px) {
+    .aboutPage {
+        &__card {
+            &_left {
+                max-width: 42%;
+            }
+            &_right {
+                min-width: 68%
+            }
+        }
+    }
+}
+@media screen and (max-width: 570px) {
+    .aboutPage {
+        &__top{
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+        }
+        &__card {
+            &_left {
+                min-width: 100%;
+            }
+            &_right {
+                min-width: 100%
+            }
+        }
+        &__btn {
+            align-self: auto;
+        }
     }
 }

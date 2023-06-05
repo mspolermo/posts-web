@@ -1,17 +1,13 @@
-@import '/src/styles/variables.scss';
-
 .post {
     display: flex !important;
     flex-direction: column;
     align-items: flex-end;
-
     &__body {
         width: 100%;
         margin-bottom: 14px;
     }
     &__head {
         cursor: pointer;
-        
         &:hover{
             .post{
                 &__svg {
@@ -39,7 +35,6 @@
                     font-size: 14px;
                     transition: 0.3s font-size, color;
                 }
-                
             }
         }
     }

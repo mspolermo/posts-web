@@ -1,12 +1,9 @@
-@import '/src/styles/variables.scss';
-
 %brg-lines{
     position: absolute;
     width: 26px;
     background-color: black;
     height: 3px;
 }
-
 
 nav {
     height: 50px;
@@ -18,27 +15,6 @@ nav {
     align-items: center;
 }
 
-.burger-btn {
-    width: 30px;
-    height: 20px;
-    margin-left: 20px;
-    position: relative;
-    cursor: pointer;
-    &__line {
-        @extend %brg-lines;
-        top: 9px;
-    }
-    &::before{
-        content: '';
-        @extend %brg-lines;
-        top: 0;
-    }
-    &::after{
-        content: '';
-        @extend %brg-lines;
-        bottom: 0;
-    }
-}
 
 .header {
     &__point{
@@ -64,12 +40,33 @@ nav {
     }
     &__about {
         display: flex;
-        //align-items: center;
     }
     &__ava {
-        margin-right: 20px;
-        width: 60px;
+        margin-right: 16px;
         height: 60px;
+        border-radius: 8px;
+        transform: translateY(-4px);
     }
 }
 
+.burger-btn {
+    width: 30px;
+    height: 20px;
+    margin-left: 20px;
+    position: relative;
+    cursor: pointer;
+    &__line {
+        @extend %brg-lines;
+        top: 9px;
+    }
+    &::before{
+        content: '';
+        @extend %brg-lines;
+        top: 0;
+    }
+    &::after{
+        content: '';
+        @extend %brg-lines;
+        bottom: 0;
+    }
+}

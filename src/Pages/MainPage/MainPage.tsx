@@ -1,9 +1,7 @@
 import React, { FC, useState } from "react";
-import './MainPage.scss'
+import './MainPage.scss';
 import PostsList from '../../components/PostsList/PostsList';
 import Form from 'react-bootstrap/Form';
-
-
 
 const MainPage:FC = () => {
     const [sortVariant, setSortVariant] = useState('userId');

@@ -9,11 +9,13 @@ import Navbar from 'react-bootstrap/Navbar';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import { useNavigate } from "react-router-dom";
 
+const imgLink = require('../../static/Photo Medvedev Alexander.jpg'); 
+
 const Header:FC = () => {
     const {menuStatus} = useTypedSelector(state => state.menu);
     const dispatch = useDispatch();
     const navigate = useNavigate();
-    const imgLink = 'https://www.freeiconspng.com/uploads/person-outline-icon-png-person-outline-icon-png-person-17.png';
+    //const imgLink = 'https://www.freeiconspng.com/uploads/person-outline-icon-png-person-outline-icon-png-person-17.png';
 	function closing() {
         dispatch(menuFalse())
     };
