@@ -1,7 +1,9 @@
 {
   "files": {
-    "main.css": "/posts-web/static/css/main.6991b60c.css",
-    "main.js": "/posts-web/static/js/main.e37c8d8a.js",
+    "main.css": "/posts-web/static/css/main.26dae9e8.css",
+    "main.js": "/posts-web/static/js/main.2e56d384.js",
+    "static/media/Photo Medvedev Alexander.jpg": "/posts-web/static/media/Photo Medvedev Alexander.b244f1729cadb67751f1.jpg",
+    "static/media/CV Medvedev Alexander.pdf": "/posts-web/static/media/CV Medvedev Alexander.860779df24f9b7a60597.pdf",
     "static/media/IvyStyleSans-LightItalic.eot": "/posts-web/static/media/IvyStyleSans-LightItalic.fed5019bdac3f3fb6af9.eot",
     "static/media/IvyStyleSans-LightItalic.ttf": "/posts-web/static/media/IvyStyleSans-LightItalic.a0de5daa72b8ff9205ed.ttf",
     "static/media/IvyStyleSans-ThinItalic.eot": "/posts-web/static/media/IvyStyleSans-ThinItalic.c1c452c96fef4814189a.eot",
@@ -43,11 +45,11 @@
     "static/media/IvyStyleSans-Bold.woff2": "/posts-web/static/media/IvyStyleSans-Bold.11d18679aadc6ff7fe89.woff2",
     "static/media/IvyStyleSans-Thin.woff2": "/posts-web/static/media/IvyStyleSans-Thin.cc553dfc4210029cf3b2.woff2",
     "index.html": "/posts-web/index.html",
-    "main.6991b60c.css.map": "/posts-web/static/css/main.6991b60c.css.map",
-    "main.e37c8d8a.js.map": "/posts-web/static/js/main.e37c8d8a.js.map"
+    "main.26dae9e8.css.map": "/posts-web/static/css/main.26dae9e8.css.map",
+    "main.2e56d384.js.map": "/posts-web/static/js/main.2e56d384.js.map"
   },
   "entrypoints": [
-    "static/css/main.6991b60c.css",
-    "static/js/main.e37c8d8a.js"
+    "static/css/main.26dae9e8.css",
+    "static/js/main.2e56d384.js"
   ]
 }
